@@ -1,0 +1,13 @@
+{
+    "education":[
+        {
+            "title": "Oct 2018 - Aug 2022",
+            "cardTitle": "B.Sc, Mechanical Engineering",
+            "cardSubtitle":"UET, Lahore",
+            "cardDetailedText": "CGPA - 3.007",
+            "icon" : {
+                "src": "images/education/uet.png"
+            }
+        }
+    ]
+}
