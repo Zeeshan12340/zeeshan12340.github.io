@@ -39,10 +39,6 @@ const ProjectCard = (props) => {
 
   const { project } = props;
 
-  const handleClick = (link) => {
-    window.location.href = link.href;
-  };
-
   return (
     <Col>
       <Card
@@ -67,7 +63,7 @@ const ProjectCard = (props) => {
               key={link.href}
               style={styles.buttonStyle}
               variant={'outline-' + theme.bsSecondaryVariant}
-              onClick={() => handleClick(link)}
+              onClick={() => window.open(link.href, '_blank')}
             >
               {link.text}
             </Button>
