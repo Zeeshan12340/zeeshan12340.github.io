@@ -17,7 +17,7 @@ function ThemeToggler(props) {
           <div style={{ marginBottom: 8 }}>
             <DarkModeToggle
               onChange={() => handleOnChange(values.darkMode)}
-              checked={values.darkMode.value}
+              checked={values.darkMode.isDarkMode}
               size={50}
             />
           </div>
