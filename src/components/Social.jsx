@@ -59,6 +59,18 @@ function Social() {
         borderRadius: '50%',
       },
     },
+    {
+      network: 'pwn.college',
+      href: 'https://pwn.college/p/4912',
+      iconUrl: 'https://avatars.githubusercontent.com/u/42601809?s=500',
+      style: {
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10,
+        width: '60px',
+        borderRadius: '50%',
+      },
+    },
   ];
 
   return (
