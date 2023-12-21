@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import axios from 'axios';
 import '../css/MarkdownContainer.css';
 
 async function fetchMD(url) {
   try {
-    const response = await axios.get(url);
-    return response.data;
+    const response = await fetch(url);
+    const text = await response.text();
+    return text;
   } catch (error) {
     return null;
   }
