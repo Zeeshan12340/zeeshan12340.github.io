@@ -8,6 +8,7 @@
     "npm": "9.5.1"
   },
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
     "bootstrap": "^5.1.1",
     "prop-types": "^15.7.2",
     "react": "^18.0.0",
@@ -21,8 +22,9 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
     "react-social-icons": "^5.6.1",
-    "@emotion/react": "^11.0.0",
     "styled-components": "^5.3.1",
+    "@tsparticles/react": "^3.0.0",
+    "tsparticles": "^3.0.3",
     "typewriter-effect": "^2.18.2",
     "usehooks-ts": "^2.9.1"
   },
@@ -33,23 +35,21 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ]
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
-    "test": "NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
-    "eject": "NODE_OPTIONS=--openssl-legacy-provider react-scripts eject"
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts --openssl-legacy-provider test",
+    "eject": "react-scripts --openssl-legacy-provider eject"
   },
   "devDependencies": {
     "gh-pages": "^6.0.0"
   },
-  "resolutions": {
-
-  }
+  "resolutions": {}
 }
