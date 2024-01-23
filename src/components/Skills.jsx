@@ -70,17 +70,22 @@ function Skills(props) {
                 </div>
               ))}
               {data.skills.map((skill, index) => (
-                <div key={index}>
-                  {skill.items.map((item, index) => (
-                    <div key={index}>
-                      {item.show && (
-                        <div>
-                          {item.detail}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                <>
+                  <div key={index} className='d-flex flex-row justify-content-center'>
+                    {skill.items.map((item, index) => (
+                      <div key={index}>
+                        {item.show && (
+                          <div style={{margin: 10}}>
+                            <div className='h4'>
+                              <ReactMarkdown children={item.title} />
+                            </div>
+                            <ReactMarkdown children={item.detail} />
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </>
               ))}
             </Container>
           </div>
