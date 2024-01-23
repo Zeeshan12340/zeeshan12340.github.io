@@ -4,7 +4,6 @@ import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-awesome-reveal';
 import { ThemeContext } from 'styled-components';
-import endpoints from '../constants/endpoints';
 import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
