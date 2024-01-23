@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import FallbackSpinner from './components/FallbackSpinner';
 import NavBarWithRouter from './components/NavBar';
 import Home from './components/Home';
-import ObscureProject from './components/ObscureProject';
 import routes from './constants/routes.json';
 
 function MainApp() {
@@ -33,7 +32,6 @@ function MainApp() {
                   />
                 );
               })}
-            <Route path="/projects/obscure" component={ObscureProject} />
           </Suspense>
         </Switch>
       </main>

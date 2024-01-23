@@ -4,7 +4,6 @@ import { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-awesome-reveal';
 import Header from './Header';
-import endpoints from '../constants/endpoints';
 import ProjectCard from './projects/ProjectCard';
 import FallbackSpinner from './FallbackSpinner';
 import projects from '../constants/projects.json';
