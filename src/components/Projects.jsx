@@ -7,6 +7,7 @@ import Header from './Header';
 import endpoints from '../constants/endpoints';
 import ProjectCard from './projects/ProjectCard';
 import FallbackSpinner from './FallbackSpinner';
+import projects from '../constants/projects.json';
 
 const styles = {
   containerStyle: {
@@ -24,12 +25,7 @@ const Projects = (props) => {
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
-    fetch(endpoints.projects, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
+    setData(projects)
   }, []);
   const numberOfItems = showMore && data ? data.length : 6;
   return (

@@ -8,6 +8,7 @@ import endpoints from '../constants/endpoints';
 import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
+import education from '../constants/education.json';
 
 function Education(props) {
   const theme = useContext(ThemeContext);
@@ -17,12 +18,7 @@ function Education(props) {
   const [mode, setMode] = useState('VERTICAL_ALTERNATING');
 
   useEffect(() => {
-    fetch(endpoints.education, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
+    setData(education)
 
     if (window?.innerWidth < 576) {
       setMode('VERTICAL');

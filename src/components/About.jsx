@@ -6,6 +6,7 @@ import { Fade } from 'react-awesome-reveal';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
+import about from '../constants/about.json';
 
 const styles = {
   introTextContainer: {
@@ -40,12 +41,7 @@ function About(props) {
   );
 
   useEffect(() => {
-    fetch(endpoints.about, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
+    setData(about)
   }, []);
 
   return (

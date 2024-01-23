@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { SocialIcon } from 'react-social-icons';
 import endpoints from '../constants/endpoints';
+import social from '../constants/social.json';
 
 const styles = {
   iconStyle: {
@@ -14,12 +15,7 @@ function Social() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(endpoints.social, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
+    setData(social);
   }, []);
 
   const customSites = [

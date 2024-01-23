@@ -4,6 +4,7 @@ import { Fade } from 'react-awesome-reveal';
 import endpoints from '../constants/endpoints';
 import Social from './Social';
 import FallbackSpinner from './FallbackSpinner';
+import home from '../constants/home.json';
 
 const styles = {
   nameStyle: {
@@ -25,12 +26,7 @@ function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(endpoints.home, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
+    setData(home)
   }, []);
 
   return data ? (

@@ -3,19 +3,14 @@ import { Switch, Route } from 'react-router-dom';
 import FallbackSpinner from './components/FallbackSpinner';
 import NavBarWithRouter from './components/NavBar';
 import Home from './components/Home';
-import endpoints from './constants/endpoints';
 import ObscureProject from './components/ObscureProject';
+import routes from './constants/routes.json';
 
 function MainApp() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(endpoints.routes, {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
+    setData(routes)
   }, []);
 
   return (
