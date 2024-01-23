@@ -31,7 +31,7 @@ function App() {
       <ThemeProvider theme={darkMode.isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <div className="App">
-          {init && <Particles options={particlesOptions}/>}
+          {/* {init && <Particles options={particlesOptions}/>} */}
           <BrowserRouter>
             <MainApp />
           </BrowserRouter>
