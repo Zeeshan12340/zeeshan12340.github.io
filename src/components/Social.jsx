@@ -56,7 +56,7 @@ function Social() {
     },
     {
       network: 'pwn.college',
-      href: 'https://pwn.college/p/4912',
+      href: 'https://pwn.college/hacker/4912',
       iconUrl: 'https://avatars.githubusercontent.com/u/42601809?s=500',
       style: {
         marginLeft: 10,
