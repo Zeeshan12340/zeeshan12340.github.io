@@ -7,25 +7,25 @@
                     "icon": "images/skills/c.png",
                     "title": "C",
                     "detail": "University course on learning C (Intro to Programming).  \nBinary Exploitation, Reverse Engineering, etc.",
-                    "show": false
+                    "show": true
                 },
                 {
                     "icon": "images/skills/python.png",
                     "title": "Python",
                     "detail": "Used for various projects and writing scripts for exploits.  \nWrote [pypwncollege](https://github.com/Zeeshan12340/pypwncollege) and contributed flask code to an [open source project](https://github.com/pwncollege/dojo/commits?author=Zeeshan12340)",
-                    "show": false
+                    "show": true
                 },
                 {
                     "icon": "images/skills/js.png",
                     "title": "JavaScript",
                     "detail": "Used React for building this website and NextJS for [twitter clone](https://github.com/Zeeshan12340/twitter-clone).  \nUsed for other projects requiring a front-end like [revworks](https://github.com/zeeshan12340/revworks)",
-                    "show": false
+                    "show": true
                 },
                 {
                     "icon": "images/skills/mysql.png",
                     "title": "MySQL",
                     "detail": "Used a PostgreSQL database for [revworks](https://github.com/Zeeshan12340/twitter-clone), mongoDB for [twitter clone](https://github.com/Zeeshan12340/twitter-clone) etc.",
-                    "show": false
+                    "show": true
                 }
         ]},
         {
@@ -35,19 +35,19 @@
                     "icon": "images/skills/docker.png",
                     "title": "Docker",
                     "detail": "Most projects on my github have been dockerized.  \nPushed different images to [docker hub](https://hub.docker.com/u/zeeshan12340)",
-                    "show": false
+                    "show": true
                 },
                 {
                     "icon": "images/skills/react.png",
                     "title": "React",
                     "detail": "This website was built using React.",
-                    "show": false
+                    "show": true
                 },
                 {
                     "icon": "images/skills/rubyonrails.png",
                     "title": "RubyOnRails",
                     "detail": "[revworks](https://github.com/Zeeshan12340/revworks) was built using RubyOnRails.",
-                    "show": false
+                    "show": true
                 }
             ]
         }
