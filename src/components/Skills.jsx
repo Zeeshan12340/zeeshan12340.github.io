@@ -71,7 +71,7 @@ function Skills(props) {
               ))}
               {data.skills.map((skill, index) => (
                 <>
-                  <div key={index} className='d-flex flex-row justify-content-center'>
+                  <div key={index} className='d-flex justify-content-center'>
                     {skill.items.map((item, index) => (
                       <div key={index}>
                         {item.show && (
