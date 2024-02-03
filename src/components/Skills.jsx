@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import PropTypes from 'prop-types';
-import { Fade } from 'react-awesome-reveal';
-import { Container } from 'react-bootstrap';
-import Header from './Header';
-import FallbackSpinner from './FallbackSpinner';
-import skills from '../constants/skills.json';
+import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import PropTypes from "prop-types";
+import { Fade } from "react-awesome-reveal";
+import { Container } from "react-bootstrap";
+import Header from "./Header";
+import FallbackSpinner from "./FallbackSpinner";
+import skills from "../constants/skills.json";
 
 const styles = {
   iconStyle: {
@@ -13,7 +13,7 @@ const styles = {
     width: 75,
   },
   introTextContainer: {
-    whiteSpace: 'pre-wrap',
+    whiteSpace: "pre-wrap",
   },
 };
 
@@ -40,8 +40,8 @@ function Skills(props) {
   }
 
   useEffect(() => {
-    setData(skills)
-  }, [])
+    setData(skills);
+  }, []);
 
   return (
     <>
@@ -57,10 +57,18 @@ function Skills(props) {
                   <h3>{rows.title}</h3>
                   {rows.items.map((item, index) => (
                     <>
-                      <div key={index} style={{ display: 'inline-block' }}>
-                        <button type="button" className="btn m-1" onClick={() => {handleToggle(item.title)}}>
+                      <div key={index} style={{ display: "inline-block" }}>
+                        <button
+                          type="button"
+                          className="btn m-1"
+                          onClick={() => {
+                            handleToggle(item.title);
+                          }}
+                        >
                           <img
-                            style={styles.iconStyle} src={item.icon} alt={item.title}
+                            style={styles.iconStyle}
+                            src={item.icon}
+                            alt={item.title}
                           />
                         </button>
                         <p>{item.title}</p>
@@ -71,26 +79,29 @@ function Skills(props) {
               ))}
               {data.skills.map((skill, index) => (
                 <>
-                  <div key={index} className='d-flex justify-content-center'>
-                    {skill.items.map((item, index) => (
-                      <div key={index}>
-                        {item.show && (
-                          <div style={{margin: 10}}>
-                            <div className='h4'>
-                              <ReactMarkdown children={item.title} />
+                  <div key={index} className="skills-container">
+                    {skill.items.map(
+                      (item, index) =>
+                        item.show && (
+                          <div className="skill-item" key={index}>
+                            <div style={{ margin: 10 }}>
+                              <div className="h4">
+                                <ReactMarkdown children={item.title} />
+                              </div>
+                              <ReactMarkdown children={item.detail} />
                             </div>
-                            <ReactMarkdown children={item.detail} />
                           </div>
-                        )}
-                      </div>
-                    ))}
+                        )
+                    )}
                   </div>
                 </>
               ))}
             </Container>
           </div>
         </Fade>
-      ) : <FallbackSpinner /> }
+      ) : (
+        <FallbackSpinner />
+      )}
     </>
   );
 }
