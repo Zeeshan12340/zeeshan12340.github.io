@@ -152,3 +152,31 @@ section.timeline-card-content div.card-description > p {
   margin-bottom: 25px;
 }
 
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: -8px;
+}
+
+.skill-item {
+  flex: 1;
+  margin: 8px;
+  padding: 8px;
+
+  @media screen and (max-width: 479px) {
+    flex-basis: calc(50% - 16px);
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    flex-basis: calc(50% - 16px);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1079px) {
+    flex-basis: calc(33.3333% - 16px);
+  }
+
+  @media screen and (min-width: 1080px) {
+    flex-basis: calc(20% - 16px);
+  }
+}
