@@ -42,7 +42,9 @@ const ProjectCard = (props) => {
           borderColor: theme.cardBorderColor,
           borderWidth: 3,
           width: 350,
-          margin: 100,
+          marginLeft: 100,
+          marginRight: 100,
+          marginBottom: 50,
         }}
         text={theme.bsSecondaryVariant}
       >

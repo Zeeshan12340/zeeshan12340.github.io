@@ -39,6 +39,32 @@
                 "pip",
                 "pwncollege"
             ]
+        },
+        {
+            "image" : "images/projects/revworks.png",
+            "title": "RevWorks",
+            "bodyText": "- Ruby on Rails Web Application with some basic functionality.\n - Has a Web Race condition and used in a CTF I hosted. \n - Has Docker image and live heroku demo.\n",
+            "links": [
+                {
+                    "text": "demo",
+                    "href": "https://revworks-4e7c9d83d182.herokuapp.com/"
+                },
+                {
+                    "text": "Github",
+                    "href": "https://github.com/zeeshan12340/revworks"
+                }
+                ,
+                {
+                    "text": "thm room",
+                    "href": "https://tryhackme.com/jr/revworks"
+                }
+            ],
+            "tags" : [
+                "ruby",
+                "rails",
+                "CTF",
+                "webapp"
+            ]
         }
     ]
 }

@@ -177,7 +177,6 @@ section.timeline-card-content div.card-description > p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: -100px;
 }
 
 .skill-item {
