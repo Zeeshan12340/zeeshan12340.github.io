@@ -65,6 +65,21 @@
                 "CTF",
                 "webapp"
             ]
+        },
+        {
+            "image" : "images/projects/rust.png",
+            "title": "RustC2",
+            "bodyText": "- Proof of Concept Command and Control Framework written in Rust\n - Has basic features such as reverse shell handling and management, file upload/download, portscan. \n - Open Source at Github",
+            "links": [
+                {
+                    "text": "Github",
+                    "href": "https://github.com/zeeshan12340/rustc2"
+                }
+            ],
+            "tags" : [
+                "rust",
+                "C2"
+            ]
         }
     ]
 }
