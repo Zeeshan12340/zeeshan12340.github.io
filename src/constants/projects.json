@@ -2,8 +2,8 @@
     "projects" : [
         {
             "image" : "images/projects/obscure.png",
-            "title": "CTF Machine",
-            "bodyText": "- A Capture the Flag style vulnerable machine.\n -  Easy to Medium Difficulty.\n",
+            "title": "Obscure CTF",
+            "bodyText": "- A Capture the Flag style vulnerable machine.\n -  Involves a Web CVE in Odoo, docker escape and ret2libc attack.\n - Published on TryHackMe.\n - Multiple writeups/walkthroughs.\n",
             "links": [
                 {
                     "text": "Writeup",
@@ -18,6 +18,26 @@
                 "CTF",
                 "Web",
                 "Pwn"
+            ]
+        },
+        {
+            "image" : "images/projects/pwncollege.png",
+            "title": "PyPwnCollege",
+            "bodyText": "- A Python library and CLI(command line interface)\n - Used to interact with pwncollege and also to automate.\n - Published on pypi.\n -  Open Source at Github\n",
+            "links": [
+                {
+                    "text": "PyPi",
+                    "href": "https://pypi.org/project/PyPwnCollege/"
+                },
+                {
+                    "text": "Github",
+                    "href": "https://github.com/zeeshan12340/pypwncollege"
+                }
+            ],
+            "tags" : [
+                "python",
+                "pip",
+                "pwncollege"
             ]
         }
     ]

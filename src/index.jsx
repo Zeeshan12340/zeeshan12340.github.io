@@ -28,7 +28,7 @@ function App() {
     }).then(() => {
       setInit(true);
     });
-  }, []);
+  }, [init]);
 
   return (
     <AppContext.Provider value={{ darkMode }}>

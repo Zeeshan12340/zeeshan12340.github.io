@@ -23,7 +23,7 @@ function Skills(props) {
 
   const renderSkillsIntro = (intro) => (
     <h4 style={styles.introTextContainer}>
-      <ReactMarkdown children={intro} />
+      <ReactMarkdown>{intro}</ReactMarkdown>
     </h4>
   );
 
@@ -44,57 +44,53 @@ function Skills(props) {
   }, []);
 
   return (
-    <>
+    <div>
       <Header title={header} />
       {data ? (
         <Fade>
           <div className="section-content-container">
             <Container>
               {renderSkillsIntro(data.intro)}
-              {data.skills?.map((rows, index) => (
-                <div key={index}>
+              {data.skills?.map((rows) => (
+                <div key={rows.title}>
                   <br />
                   <h3>{rows.title}</h3>
-                  {rows.items.map((item, index) => (
-                    <>
-                      <div key={index} style={{ display: "inline-block" }}>
-                        <button
-                          type="button"
-                          className="btn m-1"
-                          onClick={() => {
-                            handleToggle(item.title);
-                          }}
-                        >
-                          <img
-                            style={styles.iconStyle}
-                            src={item.icon}
-                            alt={item.title}
-                          />
-                        </button>
-                        <p>{item.title}</p>
-                      </div>
-                    </>
+                  {rows.items.map((item) => (
+                    <div key={item.title} style={{ display: "inline-block" }}>
+                      <button
+                        type="button"
+                        className="btn m-1"
+                        onClick={() => {
+                          handleToggle(item.title);
+                        }}
+                      >
+                        <img
+                          style={styles.iconStyle}
+                          src={item.icon}
+                          alt={item.title}
+                        />
+                      </button>
+                      <p>{item.title}</p>
+                    </div>
                   ))}
                 </div>
               ))}
-              {data.skills.map((skill, index) => (
-                <>
-                  <div key={index} className="skills-container">
-                    {skill.items.map(
-                      (item, index) =>
-                        item.show && (
-                          <div className="skill-item" key={index}>
-                            <div style={{ margin: 10 }}>
-                              <div className="h4">
-                                <ReactMarkdown children={item.title} />
-                              </div>
-                              <ReactMarkdown children={item.detail} />
+              {data.skills.map((skill) => (
+                <div key={skill.title} className="skills-container">
+                  {skill.items.map(
+                    (item) =>
+                      item.show && (
+                        <div className="skill-item" key={item.title}>
+                          <div style={{ margin: 10 }}>
+                            <div className="h4">
+                              <ReactMarkdown>{item.title}</ReactMarkdown>
                             </div>
+                            <ReactMarkdown>{item.detail}</ReactMarkdown>
                           </div>
-                        )
-                    )}
-                  </div>
-                </>
+                        </div>
+                      )
+                  )}
+                </div>
               ))}
             </Container>
           </div>
@@ -102,7 +98,7 @@ function Skills(props) {
       ) : (
         <FallbackSpinner />
       )}
-    </>
+    </div>
   );
 }
 

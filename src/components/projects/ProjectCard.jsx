@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
-import {
-  Button, Card, Badge, Col,
-} from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import { ThemeContext } from 'styled-components';
-import ReactMarkdown from 'react-markdown';
+import React, { useContext } from "react";
+import { Button, Badge, Card } from "react-bootstrap";
+import PropTypes from "prop-types";
+import { ThemeContext } from "styled-components";
+import ReactMarkdown from "react-markdown";
 
 const styles = {
   badgeStyle: {
@@ -14,18 +12,15 @@ const styles = {
     paddingBottom: 5,
     margin: 5,
   },
-  cardStyle: {
-    borderRadius: 10,
-  },
   cardTitleStyle: {
     fontSize: 24,
     fontWeight: 700,
   },
   cardTextStyle: {
-    textAlign: 'left',
+    textAlign: "left",
   },
   linkStyle: {
-    textDecoration: 'none',
+    textDecoration: "none",
     padding: 10,
   },
   buttonStyle: {
@@ -35,25 +30,27 @@ const styles = {
 
 const ProjectCard = (props) => {
   const theme = useContext(ThemeContext);
-  const parseBodyText = (text) => <ReactMarkdown children={text} />;
 
   const { project } = props;
 
   return (
-    <Col>
+    <div>
       <Card
         style={{
-          ...styles.cardStyle,
+          borderRadius: 10,
           backgroundColor: theme.cardBackground,
           borderColor: theme.cardBorderColor,
+          borderWidth: 3,
+          width: 350,
+          margin: 100,
         }}
         text={theme.bsSecondaryVariant}
       >
-        <Card.Img variant="top" src={project?.image} />
+        <Card.Img variant="top" src={project?.image} style={{ height: 200 }} />
         <Card.Body>
           <Card.Title style={styles.cardTitleStyle}>{project.title}</Card.Title>
-          <Card.Text style={styles.cardTextStyle}>
-            {parseBodyText(project.bodyText)}
+          <Card.Text style={styles.cardTextStyle} as="div">
+            <ReactMarkdown>{project.bodyText}</ReactMarkdown>
           </Card.Text>
         </Card.Body>
 
@@ -62,8 +59,8 @@ const ProjectCard = (props) => {
             <Button
               key={link.href}
               style={styles.buttonStyle}
-              variant={'outline-' + theme.bsSecondaryVariant}
-              onClick={() => window.open(link.href, '_blank')}
+              variant={"outline-" + theme.bsSecondaryVariant}
+              onClick={() => window.open(link.href, "_blank")}
             >
               {link.text}
             </Button>
@@ -85,7 +82,7 @@ const ProjectCard = (props) => {
           </Card.Footer>
         )}
       </Card>
-    </Col>
+    </div>
   );
 };
 
@@ -94,10 +91,12 @@ ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
     bodyText: PropTypes.string.isRequired,
     image: PropTypes.string,
-    links: PropTypes.arrayOf(PropTypes.shape({
-      text: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    })),
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string.isRequired,
+        href: PropTypes.string.isRequired,
+      })
+    ),
     tags: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
