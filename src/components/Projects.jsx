@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Container, Row, Button } from 'react-bootstrap';
-import { ThemeContext } from 'styled-components';
-import PropTypes from 'prop-types';
-import { Fade } from 'react-awesome-reveal';
-import Header from './Header';
-import ProjectCard from './projects/ProjectCard';
-import FallbackSpinner from './FallbackSpinner';
-import projects from '../constants/projects.json';
+import React, { useState, useEffect, useContext } from "react";
+import { Button } from "react-bootstrap";
+import { ThemeContext } from "styled-components";
+import PropTypes from "prop-types";
+import { Fade } from "react-awesome-reveal";
+import Header from "./Header";
+import ProjectCard from "./projects/ProjectCard";
+import FallbackSpinner from "./FallbackSpinner";
+import projects from "../constants/projects.json";
 
 const styles = {
-  containerStyle: {
-    marginBottom: 25,
+  rowStyle: {
+    justifyContent: "center",
   },
   showMoreStyle: {
     margin: 25,
@@ -24,38 +24,37 @@ const Projects = (props) => {
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
-    setData(projects)
+    setData(projects);
   }, []);
   const numberOfItems = showMore && data ? data.length : 6;
   return (
-    <>
+    <div>
       <Header title={header} />
-      {data
-        ? (
-          <div className="section-content-container">
-            <Container style={styles.containerStyle}>
-              <Row xs={1} sm={1} md={2} lg={3} className="g-4">
-                {data.projects?.slice(0, numberOfItems).map((project) => (
-                  <Fade key={project.title}>
-                    <ProjectCard project={project} />
-                  </Fade>
-                ))}
-              </Row>
-
-              {!showMore
-                && (
-                <Button
-                  style={styles.showMoreStyle}
-                  variant={theme.bsSecondaryVariant}
-                  onClick={() => setShowMore(true)}
-                >
-                  show more
-                </Button>
-                )}
-            </Container>
+      {data ? (
+        <div>
+          <div className="projects-container">
+            {data.projects?.slice(0, numberOfItems).map((project) => (
+              <Fade key={project.title}>
+                <ProjectCard project={project} />
+              </Fade>
+            ))}
           </div>
-        ) : <FallbackSpinner /> }
-    </>
+          <div>
+            {!showMore && (
+              <Button
+                style={styles.showMoreStyle}
+                variant={theme.bsSecondaryVariant}
+                onClick={() => setShowMore(true)}
+              >
+                show more
+              </Button>
+            )}
+          </div>
+        </div>
+      ) : (
+        <FallbackSpinner />
+      )}
+    </div>
   );
 };
 

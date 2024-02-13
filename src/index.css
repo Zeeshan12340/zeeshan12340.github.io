@@ -173,6 +173,13 @@ section.timeline-card-content div.card-description > p {
   margin: -8px;
 }
 
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -100px;
+}
+
 .skill-item {
   flex: 1;
   margin: 8px;
