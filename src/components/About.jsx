@@ -34,9 +34,7 @@ function About(props) {
   const [data, setData] = useState(null);
 
   const parseIntro = (text) => (
-    <ReactMarkdown
-      children={text}
-    />
+    <ReactMarkdown>{text}</ReactMarkdown>
   );
 
   useEffect(() => {

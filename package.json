@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@tsparticles/react": "^3.0.0",
     "bootstrap": "^5.1.1",
     "prop-types": "^15.7.2",
     "react": "^18.0.0",
@@ -23,7 +24,6 @@
     "react-scripts": "^4.0.3",
     "react-social-icons": "^5.6.1",
     "styled-components": "^5.3.1",
-    "@tsparticles/react": "^3.0.0",
     "tsparticles": "^3.0.3",
     "typewriter-effect": "^2.18.2",
     "usehooks-ts": "^2.9.1"
@@ -46,9 +46,14 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts --openssl-legacy-provider test",
-    "eject": "react-scripts --openssl-legacy-provider eject"
+    "eject": "react-scripts --openssl-legacy-provider eject",
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^6.0.0"
   },
   "resolutions": {}

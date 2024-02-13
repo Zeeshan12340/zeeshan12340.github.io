@@ -35,7 +35,6 @@ const styles = {
 
 const ProjectCard = (props) => {
   const theme = useContext(ThemeContext);
-  const parseBodyText = (text) => <ReactMarkdown children={text} />;
 
   const { project } = props;
 
@@ -52,8 +51,8 @@ const ProjectCard = (props) => {
         <Card.Img variant="top" src={project?.image} />
         <Card.Body>
           <Card.Title style={styles.cardTitleStyle}>{project.title}</Card.Title>
-          <Card.Text style={styles.cardTextStyle}>
-            {parseBodyText(project.bodyText)}
+          <Card.Text style={styles.cardTextStyle} as="div">
+            <ReactMarkdown>{project.bodyText}</ReactMarkdown>
           </Card.Text>
         </Card.Body>
 
