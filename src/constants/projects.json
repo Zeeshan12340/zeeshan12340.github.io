@@ -80,6 +80,25 @@
                 "rust",
                 "C2"
             ]
+        },
+        {
+            "image" : "images/projects/twitter.png",
+            "title": "Twiiter-Clone",
+            "bodyText": "- Simple Twitter clone with only posts/profile/like/reply functionality.\n - Google oauth2 is setup allowing direct sign-in using google account\n- MongoDB database is used along with S3 bucket for images.\n - Open Source at Github",
+            "links": [
+                {
+                    "text": "live",
+                    "href": "https://twitter-clone-five-psi-76.vercel.app/"
+                },
+                {
+                    "text": "Github",
+                    "href": "https://github.com/zeeshan12340/twitter-clone"
+                }
+            ],
+            "tags" : [
+                "rust",
+                "C2"
+            ]
         }
     ]
 }
