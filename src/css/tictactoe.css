@@ -87,6 +87,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 150px;
   font-size: 18px;
 }
 
