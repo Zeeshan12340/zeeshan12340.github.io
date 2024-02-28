@@ -6,6 +6,9 @@ import { Fade } from 'react-awesome-reveal';
 import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import about from '../constants/about.json';
+import particlesOptions from "../particles.json";
+import Particles, {initParticlesEngine} from "@tsparticles/react";
+import {loadFull} from "tsparticles";
 
 const styles = {
   introTextContainer: {
@@ -32,6 +35,7 @@ const styles = {
 function About(props) {
   const { header } = props;
   const [data, setData] = useState(null);
+  const [init, setInit] = useState(false);
 
   const parseIntro = (text) => (
     <ReactMarkdown>{text}</ReactMarkdown>
@@ -39,10 +43,19 @@ function About(props) {
 
   useEffect(() => {
     setData(about)
-  }, []);
+    if (init) {
+      return;
+    }
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, [init]);
 
   return (
-    <>
+    <div>
+      {init && <Particles options={particlesOptions}/>}
       <Header title={header} />
       <div className="section-content-container">
         <Container>
@@ -62,7 +75,7 @@ function About(props) {
             : <FallbackSpinner />}
         </Container>
       </div>
-    </>
+    </div>
   );
 }
 

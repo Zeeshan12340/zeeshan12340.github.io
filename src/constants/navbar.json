@@ -24,6 +24,10 @@
         {
             "title": "Projects",
             "href": "/projects"
+        },
+        {
+            "title": "TicTacToe",
+            "href": "/tictactoe"
         }
     ]
 }

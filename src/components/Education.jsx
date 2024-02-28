@@ -8,6 +8,9 @@ import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/education.css';
 import education from '../constants/education.json';
+import particlesOptions from "../particles.json";
+import Particles, {initParticlesEngine} from "@tsparticles/react";
+import {loadFull} from "tsparticles";
 
 function Education(props) {
   const theme = useContext(ThemeContext);
@@ -15,6 +18,7 @@ function Education(props) {
   const [data, setData] = useState(null);
   const [width, setWidth] = useState('50vw');
   const [mode, setMode] = useState('VERTICAL_ALTERNATING');
+  const [init, setInit] = useState(false);
 
   useEffect(() => {
     setData(education)
@@ -32,10 +36,19 @@ function Education(props) {
     } else {
       setWidth('50vw');
     }
-  }, []);
+    if (init) {
+      return;
+    }
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, [init]);
 
   return (
-    <>
+    <div>
+      {init && <Particles options={particlesOptions}/>}
       <Header title={header} />
       {data ? (
         <Fade>
@@ -70,7 +83,7 @@ function Education(props) {
           </div>
         </Fade>
       ) : <FallbackSpinner /> }
-    </>
+    </div>
   );
 }
 

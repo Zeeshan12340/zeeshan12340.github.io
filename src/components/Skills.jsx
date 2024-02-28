@@ -6,6 +6,9 @@ import { Container } from "react-bootstrap";
 import Header from "./Header";
 import FallbackSpinner from "./FallbackSpinner";
 import skills from "../constants/skills.json";
+import particlesOptions from "../particles.json";
+import Particles, {initParticlesEngine} from "@tsparticles/react";
+import {loadFull} from "tsparticles";
 
 const styles = {
   iconStyle: {
@@ -20,6 +23,7 @@ const styles = {
 function Skills(props) {
   const { header } = props;
   const [data, setData] = useState(null);
+  const [init, setInit] = useState(false);
 
   const renderSkillsIntro = (intro) => (
     <h4 style={styles.introTextContainer}>
@@ -41,10 +45,19 @@ function Skills(props) {
 
   useEffect(() => {
     setData(skills);
-  }, []);
+    if (init) {
+      return;
+    }
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, [init]);
 
   return (
     <div>
+      {init && <Particles options={particlesOptions}/>}
       <Header title={header} />
       {data ? (
         <Fade>
