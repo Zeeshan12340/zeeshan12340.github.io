@@ -96,9 +96,29 @@
                 }
             ],
             "tags" : [
-                "rust",
-                "C2"
+                "social",
+                "web app"
+            ]
+        },
+        {
+            "image" : "images/projects/event.png",
+            "title": "Event-Dashboard",
+            "bodyText": "- Event Dashboard for finding events\n - Fully interactive with event modal, category popper, event list expansion/collapse.\n- Built with typescript, tailwind and redux.\n - Open Source at Github",
+            "links": [
+                {
+                    "text": "live",
+                    "href": "https://event-dashboard-one.vercel.app/"
+                },
+                {
+                    "text": "Github",
+                    "href": "https://github.com/zeeshan12340/event-dashboard"
+                }
+            ],
+            "tags" : [
+                "typescript",
+                "web app"
             ]
         }
+
     ]
 }
