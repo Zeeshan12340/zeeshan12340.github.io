@@ -1,24 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { useParams } from "react-router-dom";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import post1Data from '../constants/pwncollege.md';
 
 export default function Post() {
-    let { id } = useParams();
     const [post1, setPost1] = useState('');
 
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/Zeeshan12340/writeups/main/revworks.md')
+        fetch(post1Data)
             .then(response => response.text())
             .then(text => setPost1(text));
     }, []);
 
     return (
         <div className="my-5">
-            <h1>Post {id}</h1>
-            <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left' }}>
+            <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left', fontFamily: 'Merriweather' }}>
                 <ReactMarkdown
                     components={{
-                        img: ({ ...props }) => <div><img {...props} /></div>
+                        img: ({ ...props }) => <div><img {...props} /></div>,
+                        code: ({ inline, className, children, ...props }) => {
+                            const match = /language-(\w+)/.exec(className || '');
+                            return !inline && match ? (
+                                <SyntaxHighlighter style={dracula} language={match[1]} PreTag="div" {...props}>{String(children).replace(/\n$/, '')}</SyntaxHighlighter>
+                            ) : (
+                                <code className={className} {...props}>
+                                    {children}
+                                </code>
+                            );
+                        }
                     }}
                 >
                     {post1}
