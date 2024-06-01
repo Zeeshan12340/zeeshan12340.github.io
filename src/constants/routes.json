@@ -6,6 +6,11 @@
             "headerTitle": "About"
         },
         {
+            "component": "Posts",
+            "path": "/blog",
+            "headerTitle": "Blog"
+        },
+        {
             "component": "Skills",
             "path": "/skills",
             "headerTitle": "Skills"
