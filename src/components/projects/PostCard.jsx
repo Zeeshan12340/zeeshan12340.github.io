@@ -51,7 +51,7 @@ const PostCard = (props) => {
                 pill
                 bg={theme.bsSecondaryVariant}
                 text={theme.bsPrimaryVariant}
-                style={styles.badgeStyle}
+                style={{ marginRight: 5, marginLeft: 5}}
               >
                 {tag}
               </Badge>

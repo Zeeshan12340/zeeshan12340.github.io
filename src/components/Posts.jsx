@@ -4,6 +4,8 @@ import PostCard from './projects/PostCard'
 import particlesOptions from "../particles.json";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import '../index.css';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Posts() {
     const post = {
@@ -31,9 +33,11 @@ export default function Posts() {
 
     return (
         <div>
+            <h1 className='mt-4 mb-6 header'>Posts</h1>
             {init && <Particles options={particlesOptions} />}
-            <h1 className='my-4'>Posts</h1>
-            <PostCard project={post} />
+            <Link to='/posts/1' style={{ textDecoration: 'none' }}>
+                <PostCard project={post} />
+            </Link>
         </div>
     )
 }
