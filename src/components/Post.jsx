@@ -3,15 +3,24 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import post1Data from '../constants/pwncollege.md';
+import { useParams } from 'react-router-dom';
 
 export default function Post() {
-    const [post1, setPost1] = useState('');
+    const { id } = useParams();
+
+    const [post, setPost] = useState('');
 
     useEffect(() => {
-        fetch(post1Data)
+        if (id === "1") {
+            fetch(post1Data)
+                .then(response => response.text())
+                .then(text => setPost(text));
+        } else if (id === "2") {
+        fetch("https://raw.githubusercontent.com/Zeeshan12340/writeups/main/obscure.md")
             .then(response => response.text())
-            .then(text => setPost1(text));
-    }, []);
+            .then(text => setPost(text));
+        }
+    }, [id]);
 
     return (
         <div className="my-5">
@@ -31,7 +40,7 @@ export default function Post() {
                         }
                     }}
                 >
-                    {post1}
+                    {post}
                 </ReactMarkdown>
             </div>
         </div>

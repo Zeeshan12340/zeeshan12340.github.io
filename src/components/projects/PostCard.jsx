@@ -18,7 +18,7 @@ const styles = {
 const PostCard = (props) => {
   const theme = useContext(ThemeContext);
 
-  const { project } = props;
+  const { post } = props;
 
   return (
     <div>
@@ -29,23 +29,23 @@ const PostCard = (props) => {
           borderColor: theme.cardBorderColor,
           width: 500,
           height: 325,
-          marginLeft: 100,
-          marginRight: 100,
+          marginLeft: 50,
+          marginRight: 50,
           marginBottom: 50,
         }}
         text={theme.bsSecondaryVariant}
       >
-        <Card.Img variant="top" src={project?.image} style={{ height: 175 }} />
+        <Card.Img variant="top" src={post?.image} style={{ height: 175 }} />
         <Card.Body style={{ minHeight: "150px" }}>
-          <Card.Title style={styles.cardTitleStyle}>{project.title}</Card.Title>
+          <Card.Title style={styles.cardTitleStyle}>{post.title}</Card.Title>
           <Card.Text style={{ textAlign: 'left' }} as="div">
-            <ReactMarkdown>{project.bodyText}</ReactMarkdown>
+            <ReactMarkdown>{post.bodyText}</ReactMarkdown>
           </Card.Text>
         </Card.Body>
 
-        {project.tags && (
+        {post.tags && (
           <Card.Footer style={{ backgroundColor: theme.cardFooterBackground }}>
-            {project.tags.map((tag) => (
+            {post.tags.map((tag) => (
               <Badge
                 key={tag}
                 pill
@@ -64,7 +64,7 @@ const PostCard = (props) => {
 };
 
 PostCard.propTypes = {
-  project: PropTypes.shape({
+  post: PropTypes.shape({
     title: PropTypes.string.isRequired,
     bodyText: PropTypes.string.isRequired,
     image: PropTypes.string,

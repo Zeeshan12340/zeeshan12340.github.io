@@ -6,20 +6,11 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import '../index.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import posts from '../constants/posts.json';
 
 export default function Posts() {
-    const post = {
-        "image": "images/blog/pwncollege.jpeg",
-        "title": "How I pwned pwn.college",
-        "bodyText": "This post is about the time I found a Cross Site Scripting vulnerability in pwn.college, going into the motivations and how I discovered it along with the remediation.",
-        "tags": [
-            "XSS",
-            "CTF",
-            "pwn.college",
-        ]
-    }
-
     const [init, setInit] = useState(false);
+
     useEffect(() => {
         if (init) {
             return;
@@ -33,11 +24,17 @@ export default function Posts() {
 
     return (
         <div>
-            <h1 className='mt-4 mb-6 header'>Posts</h1>
             {init && <Particles options={particlesOptions} />}
-            <Link to='/posts/1' style={{ textDecoration: 'none' }}>
-                <PostCard project={post} />
-            </Link>
+            <h1 className='mt-4 mb-6 header'>Posts</h1>
+            <div>
+                <div className='posts-container'>
+                    {posts.posts.map((post, index) => (
+                        <Link key={index} to={`/posts/${index+1}`} style={{ textDecoration: 'none' }}>
+                            <PostCard key={index} post={post} />
+                        </Link>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
