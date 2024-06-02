@@ -15,7 +15,7 @@ export default function Post() {
 
     return (
         <div className="my-5">
-            <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left', fontFamily: 'Merriweather' }}>
+            <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'justify', fontFamily: 'Inter, Sans-Serif' }}>
                 <ReactMarkdown
                     components={{
                         img: ({ ...props }) => <div><img {...props} /></div>,
