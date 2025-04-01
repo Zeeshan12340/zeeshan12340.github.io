@@ -66,6 +66,18 @@ function Social() {
         borderRadius: '50%',
       },
     },
+    {
+      network: 'buymeacoffee',
+      href: 'https://buymeacoffee.com/zeeshan1234',
+      iconUrl: 'https://play-lh.googleusercontent.com/aMb_Qiolzkq8OxtQZ3Af2j8Zsp-ZZcNetR9O4xSjxH94gMA5c5gpRVbpg-3f_0L7vlo',
+      style: {
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10,
+        width: '60px',
+        borderRadius: '50%',
+      },
+    }
   ];
 
   return (
