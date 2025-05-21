@@ -11,11 +11,6 @@
             "headerTitle": "Blog"
         },
         {
-            "component": "Skills",
-            "path": "/skills",
-            "headerTitle": "Skills"
-        },
-        {
             "component": "Projects",
             "path": "/projects",
             "headerTitle": "Projects"

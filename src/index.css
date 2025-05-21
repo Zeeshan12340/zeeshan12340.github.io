@@ -154,13 +154,6 @@ section.timeline-card-content div.card-description > p {
   z-index: 1;
 }
 
-.skills-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: -8px;
-}
-
 .projects-container {
   display: flex;
   justify-content: center;
