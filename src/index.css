@@ -83,20 +83,6 @@ code {
   align-items: center;
 }
 
-.Typewriter {
-  display: inline-block;
-}
-
-.Typewriter__wrapper {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
-.Typewriter__cursor {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
 section.timeline-card-content {
   justify-content: center;
 }
