@@ -21,11 +21,6 @@
             "headerTitle": "Projects"
         },
         {
-            "component": "TicTacToe",
-            "path": "/tictactoe",
-            "headerTitle": "Tic Tac Toe"
-        },
-        {
             "component": "Post",
             "path": "/posts/:id",
             "headerTitle": "Post"
