@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "homepage": "https://zeeshan12340.github.io/",
   "private": true,
-  "engines": {
-    "node": "18.16.0",
-    "npm": "9.5.1"
-  },
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
     "@popperjs/core": "^2.11.8",
@@ -45,10 +41,10 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
-    "test": "react-scripts --openssl-legacy-provider test",
-    "eject": "react-scripts --openssl-legacy-provider eject",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix"
   },

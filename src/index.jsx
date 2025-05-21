@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from 'usehooks-ts';
 import AppContext from './AppContext';
@@ -21,9 +21,9 @@ function App() {
       <ThemeProvider theme={darkMode.isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyles />
         <div className="App">
-          <BrowserRouter>
+          <HashRouter>
             <MainApp />
-          </BrowserRouter>
+          </HashRouter>
         </div>
       </ThemeProvider>
     </AppContext.Provider>
