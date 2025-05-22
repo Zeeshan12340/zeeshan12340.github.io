@@ -9,20 +9,20 @@ import about from '../constants/about.json';
 
 const styles = {
   introTextContainer: {
-    margin: 10,
     flexDirection: 'column',
     font: 'normal 200 1.2em "Sans Francisco"',
   },
   introImageContainer: {
-    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
   },
   imageStyle: {
-    margin: 10,
-    width: '500px',
-    display: 'flex',
+    width: '200px',
+    height: '200px',
+    borderRadius: '90%',
+    objectFit: 'cover',
+    display: 'flex'
   },
 };
 
@@ -41,13 +41,18 @@ function About(props) {
   return (
     <div>
       <Header title={header} />
-      <div className="section-content-container">
+      <div className="section-content-container" style={{
+        minHeight: '60vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
         <Container>
           {data
             ? (
               <Fade>
                 <Row>
-                  <Col className='mt-5' style={styles.introTextContainer}>
+                  <Col className="mt-4" style={styles.introTextContainer}>
                     {parseIntro(data.about)}
                   </Col>
                   <Col style={styles.introImageContainer}>

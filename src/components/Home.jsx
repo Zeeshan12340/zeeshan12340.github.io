@@ -29,7 +29,6 @@ function Home() {
         <br />
         <h2 style={styles.infoStyle}>Motivated Cyber Security Professional focused on low level research and finding bugs.</h2>
         <br />
-        <br />
         <Social />
       </Fade>
     </div>

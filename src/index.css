@@ -158,6 +158,7 @@ section.timeline-card-content div.card-description > p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background: linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60));
 }
 
 .posts-container {
