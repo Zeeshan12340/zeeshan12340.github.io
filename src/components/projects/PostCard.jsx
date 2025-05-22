@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Badge, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 
 const styles = {
   cardTitleStyle: {
@@ -21,29 +21,27 @@ const PostCard = (props) => {
   const { post } = props;
 
   return (
-    <div>
+    <div style={{ maxWidth: 400 }}>
       <Card
         style={{
           borderRadius: 10,
           backgroundColor: theme.cardBackground,
           borderColor: theme.cardBorderColor,
-          width: 500,
-          height: 325,
-          marginLeft: 50,
-          marginRight: 50,
+          width: 600,
+          height: 70,
           marginBottom: 50,
         }}
         text={theme.bsSecondaryVariant}
       >
-        <Card.Img variant="top" src={post?.image} style={{ height: 175 }} />
-        <Card.Body style={{ minHeight: "150px" }}>
+        {/* <Card.Img variant="top" src={post?.image} style={{ height: 175 }} /> */}
+        <Card.Body>
           <Card.Title style={styles.cardTitleStyle}>{post.title}</Card.Title>
-          <Card.Text style={{ textAlign: 'left' }} as="div">
+          {/* <Card.Text style={{ textAlign: 'left' }} as="div">
             <ReactMarkdown>{post.bodyText}</ReactMarkdown>
-          </Card.Text>
+          </Card.Text> */}
         </Card.Body>
 
-        {post.tags && (
+        {/* {post.tags && (
           <Card.Footer style={{ backgroundColor: theme.cardFooterBackground }}>
             {post.tags.map((tag) => (
               <Badge
@@ -57,7 +55,7 @@ const PostCard = (props) => {
               </Badge>
             ))}
           </Card.Footer>
-        )}
+        )} */}
       </Card>
     </div>
   );

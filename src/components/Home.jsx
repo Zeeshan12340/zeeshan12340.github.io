@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Social from './Social';
-import particlesOptions from "../particles.json";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadFull } from "tsparticles";
 
 const styles = {
   nameStyle: {
     fontSize: '3em',
+  },
+  infoStyle: {
+    fontSize: '1.2em',
+    color: '#fff',
   },
   inlineChild: {
     display: 'inline-block',
@@ -15,32 +16,22 @@ const styles = {
   mainContainer: {
     height: '100%',
     display: 'flex',
+    background: "linear-gradient(135deg, #1e1e2f, #2d2d44)",
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
 };
 
-
 function Home() {
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    if (init) {
-      return;
-    }
-    initParticlesEngine(async (engine) => {
-      await loadFull(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, [init]);
-
   return (
     <div style={styles.mainContainer}>
-      {init && <Particles options={particlesOptions} />}
       <Fade>
         <h1 style={styles.nameStyle}>Zeeshan1234</h1>
+        <br />
+        <h2 style={styles.infoStyle}>Motivated Cyber Security Professional focused on low level research and finding bugs.</h2>
+        <br />
+        <br />
         <Social />
       </Fade>
     </div>

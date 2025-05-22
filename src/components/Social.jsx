@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { SocialIcon } from 'react-social-icons';
-import social from '../constants/social.json';
-
-const styles = {
-  iconStyle: {
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 10,
-  },
-};
+import React from 'react';
 
 function Social() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    setData(social);
-  }, []);
-
   const customSites = [
+    {
+      network: 'github',
+      href: 'https://github.com/zeeshan12340',
+      iconUrl: '/images/github.png',
+      style: {
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10,
+        width: '50px',
+        borderRadius: '50%',
+      },
+    },
+    {
+      network: 'discord',
+      href: 'https://discord.com/users/717250576747986955',
+      iconUrl: '/images/discord.png',
+      style: {
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10,
+        width: '50px',
+        borderRadius: '50%',
+      },
+    },
     {
       network: 'hackthebox',
       href: 'https://app.hackthebox.com/users/348120',
@@ -26,7 +34,7 @@ function Social() {
         marginLeft: 10,
         marginRight: 10,
         marginBottom: 10,
-        width: '60px',
+        width: '50px',
         borderRadius: '50%',
       },
     },
@@ -38,7 +46,7 @@ function Social() {
         marginLeft: 10,
         marginRight: 10,
         marginBottom: 10,
-        width: '60px',
+        width: '50px',
         borderRadius: '50%',
       },
     },
@@ -50,7 +58,7 @@ function Social() {
         marginLeft: 10,
         marginRight: 10,
         marginBottom: 10,
-        width: '60px',
+        width: '50px',
         borderRadius: '50%',
       },
     },
@@ -62,7 +70,7 @@ function Social() {
         marginLeft: 10,
         marginRight: 10,
         marginBottom: 10,
-        width: '60px',
+        width: '50px',
         borderRadius: '50%',
       },
     },
@@ -74,7 +82,7 @@ function Social() {
         marginLeft: 10,
         marginRight: 10,
         marginBottom: 10,
-        width: '60px',
+        width: '50px',
         borderRadius: '50%',
       },
     }
@@ -82,18 +90,6 @@ function Social() {
 
   return (
     <div className="social">
-      {data ? data.social.map((social) => (
-        <SocialIcon
-          key={social.network}
-          style={styles.iconStyle}
-          url={social.href}
-          network={social.network}
-          // bgColor={theme.socialIconBgColor}
-          target="_blank"
-          rel="noopener"
-        />
-      )) : null}
-
       {customSites.map((site) => (
         <a
           key={site.network}

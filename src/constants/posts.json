@@ -11,7 +11,7 @@
             ]
         }, {
             "image": "images/projects/obscure.png",
-            "title": "Writeup for my machine: Obscured",
+            "title": "Dev Writeup: Obscured ",
             "bodyText": "This post is a writeup for the machine Obscured on tryhackme, which was created by me. It was the first fully fledged machine I created and I learned a lot from the process.",
             "tags": [
                 "Web",
