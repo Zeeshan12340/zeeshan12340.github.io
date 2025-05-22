@@ -11,10 +11,7 @@ const styles = {
   introTextContainer: {
     margin: 10,
     flexDirection: 'column',
-    whiteSpace: 'pre-wrap',
-    textAlign: 'left',
-    fontSize: '1.2em',
-    fontWeight: 500,
+    font: 'normal 200 1.2em "Sans Francisco"',
   },
   introImageContainer: {
     margin: 10,
@@ -50,7 +47,7 @@ function About(props) {
             ? (
               <Fade>
                 <Row>
-                  <Col style={styles.introTextContainer}>
+                  <Col className='mt-5' style={styles.introTextContainer}>
                     {parseIntro(data.about)}
                   </Col>
                   <Col style={styles.introImageContainer}>
