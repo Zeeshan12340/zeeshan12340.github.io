@@ -1,12 +1,13 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import navbar from '../constants/navbar.json';
 
 const ExternalNavLink = styled.a`
   color: ${(props) => props.theme.navbarTheme.linkColor};
+  font-weight: bold;
   &:hover {
     color: ${(props) => props.theme.navbarTheme.linkHoverColor};
   }
@@ -17,6 +18,7 @@ const ExternalNavLink = styled.a`
 
 const InternalNavLink = styled(NavLink)`
   color: ${(props) => props.theme.navbarTheme.linkColor};
+  font-weight: bold;
   &:hover {
     color: ${(props) => props.theme.navbarTheme.linkHoverColor};
   }
@@ -29,7 +31,6 @@ const InternalNavLink = styled(NavLink)`
 `;
 
 const NavBar = () => {
-  const theme = useContext(ThemeContext);
   const [data, setData] = useState(null);
   const [expanded, setExpanded] = useState(false);
 
@@ -41,7 +42,6 @@ const NavBar = () => {
     <Navbar
       fixed="top"
       expand="md"
-      bg="dark"
       variant="dark"
       className="navbar-custom"
       expanded={expanded}
@@ -63,7 +63,6 @@ const NavBar = () => {
                   rel="noopener noreferrer"
                   onClick={() => setExpanded(false)}
                   className="navbar__link"
-                  theme={theme}
                 >
                   {section.title}
                 </ExternalNavLink>
@@ -75,7 +74,6 @@ const NavBar = () => {
                   activeClassName="navbar__link--active"
                   className="navbar__link"
                   to={section.href}
-                  theme={theme}
                 >
                   {section.title}
                 </InternalNavLink>

@@ -4,11 +4,10 @@ import Social from './Social';
 
 const styles = {
   nameStyle: {
-    fontSize: '3em',
+    font: 'normal 500 3em "Anonymous Pro", sans-serif',
   },
   infoStyle: {
-    fontSize: '1.2em',
-    color: '#fff',
+    font: 'normal 200 1.2em "Sans Francisco"',
   },
   inlineChild: {
     display: 'inline-block',
@@ -16,7 +15,7 @@ const styles = {
   mainContainer: {
     height: '100%',
     display: 'flex',
-    background: "linear-gradient(135deg, #1e1e2f, #2d2d44)",
+    background: "linear-gradient(135deg,rgb(30, 30, 45),rgb(32, 32, 60))",
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
