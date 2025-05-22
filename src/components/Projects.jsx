@@ -7,9 +7,6 @@ import Header from "./Header";
 import ProjectCard from "./projects/ProjectCard";
 import FallbackSpinner from "./FallbackSpinner";
 import projects from "../constants/projects.json";
-import particlesOptions from "../particles.json";
-import Particles, {initParticlesEngine} from "@tsparticles/react";
-import {loadFull} from "tsparticles";
 
 const styles = {
   rowStyle: {
@@ -25,23 +22,13 @@ const Projects = (props) => {
   const { header } = props;
   const [data, setData] = useState(null);
   const [showMore, setShowMore] = useState(false);
-  const [init, setInit] = useState(false);
 
   useEffect(() => {
     setData(projects);
-    if (init) {
-      return;
-    }
-    initParticlesEngine(async (engine) => {
-      await loadFull(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, [init]);
+  }, []);
   const numberOfItems = showMore && data ? data.length : 6;
   return (
     <div>
-      {init && <Particles options={particlesOptions}/>}
       <Header title={header} />
       {data ? (
         <div>

@@ -15,7 +15,6 @@ const styles = {
   mainContainer: {
     height: '100%',
     display: 'flex',
-    background: "linear-gradient(135deg,rgb(30, 30, 45),rgb(32, 32, 60))",
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',

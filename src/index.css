@@ -72,6 +72,7 @@ code {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60));
 }
 
 .section-content-container {
