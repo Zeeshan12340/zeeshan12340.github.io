@@ -40,18 +40,6 @@ function Social() {
       },
     },
     {
-      network: 'pwn.college',
-      href: 'https://pwn.college/hacker/4912',
-      iconUrl: 'https://avatars.githubusercontent.com/u/42601809?s=500',
-      style: {
-        marginLeft: 10,
-        marginRight: 10,
-        marginBottom: 10,
-        width: '50px',
-        borderRadius: '50%',
-      },
-    },
-    {
       network: 'buymeacoffee',
       href: 'https://buymeacoffee.com/zeeshan1234',
       iconUrl: '/images/logos/buymeacoffee.png',

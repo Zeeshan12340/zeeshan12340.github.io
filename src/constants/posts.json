@@ -1,23 +1,13 @@
 {
     "posts" : [
         {
-            "image": "images/blog/pwncollege.jpeg",
             "title": "How I pwned pwn.college",
             "bodyText": "This post is about the time I found a Cross Site Scripting vulnerability in pwn.college, going into the motivations and how I discovered it along with the remediation.",
-            "tags": [
-                "XSS",
-                "CTF",
-                "pwn.college"
-            ]
+            "pubdate": "2023-05-06"
         }, {
-            "image": "images/projects/obscure.png",
             "title": "Dev Writeup: Obscured ",
             "bodyText": "This post is a writeup for the machine Obscured on tryhackme, which was created by me. It was the first fully fledged machine I created and I learned a lot from the process.",
-            "tags": [
-                "Web",
-                "CTF",
-                "TryHackMe"
-            ]
+            "pubdate": "2022-10-01"
         }
     ]
 }
