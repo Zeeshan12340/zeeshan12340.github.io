@@ -2,11 +2,9 @@
     "posts" : [
         {
             "title": "How I pwned pwn.college",
-            "bodyText": "This post is about the time I found a Cross Site Scripting vulnerability in pwn.college, going into the motivations and how I discovered it along with the remediation.",
             "pubdate": "2023-05-06"
         }, {
             "title": "Dev Writeup: Obscured ",
-            "bodyText": "This post is a writeup for the machine Obscured on tryhackme, which was created by me. It was the first fully fledged machine I created and I learned a lot from the process.",
             "pubdate": "2022-10-01"
         }
     ]
