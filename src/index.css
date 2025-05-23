@@ -28,6 +28,16 @@ code {
   font-size:large;
 }
 
+.navbar-visible {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
 .navbar__link {
   margin-left: 0.75em;
   margin-right: 0.75em;
@@ -198,4 +208,8 @@ section.timeline-card-content div.card-description > p {
   @media screen and (min-width: 1080px) {
     flex-basis: calc(20% - 16px);
   }
+}
+
+pre code {
+  counter-reset: line;
 }

@@ -33,17 +33,30 @@ const InternalNavLink = styled(NavLink)`
 const NavBar = () => {
   const [data, setData] = useState(null);
   const [expanded, setExpanded] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     setData(navbar);
-  }, []);
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowNavbar(false); // scrolling down
+      } else {
+        setShowNavbar(true); // scrolling up
+      }
+      setLastScrollY(window.scrollY);
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
     <Navbar
       fixed="top"
       expand="md"
       variant="dark"
-      className="navbar-custom"
+      className={`navbar-custom ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}`}
       expanded={expanded}
     >
       <Container>
