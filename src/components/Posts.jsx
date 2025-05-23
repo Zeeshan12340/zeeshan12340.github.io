@@ -11,7 +11,7 @@ export default function Posts() {
                 <div className='posts-container'>
                     {posts.posts.map((post, index) => (
                         <Link key={index} to={`/posts/${index + 1}`} style={{ textDecoration: 'none' }}>
-                            <div key={index} style={{ minWidth: 800, minHeight: 60, borderRadius: 10, background: '#35393b', boxShadow: '0 4px 12px rgba(255, 255, 255, 0.55)' }} className='p-2 m-2 rounded-lg border transition-all duration-300'>
+                            <div key={index} style={{ minWidth: 800, minHeight: 60, borderRadius: 10, background: '#35393b' }} className='glow-card p-2 m-2 rounded-lg'>
                                 <div
                                     style={{
                                         display: 'flex',

@@ -75,6 +75,16 @@ code {
   background: linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60));
 }
 
+.glow-card {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
 .section-content-container {
   display: flex;
   flex-direction: column;
