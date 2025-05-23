@@ -7,7 +7,7 @@ const styles = {
     font: 'normal 500 3em "Anonymous Pro", sans-serif',
   },
   infoStyle: {
-    font: 'normal 200 1.2em "Sans Francisco"',
+    font: 'normal 300 1.4em "Sans Francisco"',
   },
   inlineChild: {
     display: 'inline-block',
