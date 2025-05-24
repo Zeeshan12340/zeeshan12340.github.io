@@ -1,11 +1,16 @@
 {
-    "posts" : [
+    "posts": [
+        {
+            "title": "Dev Writeup: Obscured ",
+            "pubdate": "2023-05-05"
+        },
         {
             "title": "How I pwned pwn.college",
-            "pubdate": "2023-05-06"
-        }, {
-            "title": "Dev Writeup: Obscured ",
-            "pubdate": "2022-10-01"
+            "pubdate": "2024-06-02"
+        },
+        {
+            "title": "Android Exploitation: How I found a bug in an app",
+            "pubdate": "2025-05-23"
         }
     ]
 }
