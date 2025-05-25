@@ -12,7 +12,7 @@ To get started with Android exploitation, you will need a few tools:
 
 - **Android Studio**: This is the official IDE for Android development and comes with an emulator, which is useful for testing.
     1. **ADB (Android Debug Bridge)**: ADB comes along with Android Studio(available in `~/Android/Sdk/platform-tools/adb` on Ubuntu). It is essential for installing apps, debugging, and accessing the device's file system. We will use it to extract the APK file.
-    2. **Emulator**: The Android emulator phone allows you to run Android apps on your computer. I recommend creating an emulator with "Google APIs" to ensure you have access to Google Play Services, which many apps depend on and it also allows you to get root access easily with `adb root`(Google Play Store image will produce an error `Cannot run as root on production builds` and Android Open Source might not have some needed libraries). I like to use relatively newer Android versions like Android 14+(API 34+) to ensure compatibility with the latest apps.
+    2. **Emulator**: The Android emulator allows you to run Android apps on your computer. I recommend creating an emulator with "Google APIs" to ensure you have access to Google Play Services, which many apps depend on and it also allows you to get root access easily with `adb root`(Google Play Store image will produce an error `Cannot run as root on production builds` and Android Open Source(AOSP) image might not have some needed libraries). I like to use relatively newer Android versions like Android 14+(API 34+) to ensure compatibility with the latest apps.
 
 - **APKTool**: This tool is used to decompile APK files, allowing you to inspect the app's resources and code. It can be also used to re-build the modified, decompiled APK files but you will need to sign them before installing on the device (you can use `jarsigner` or `apksigner` for this). This might not work for all apps, especially those that use ProGuard for obfuscation or split APKs.
 
@@ -28,7 +28,7 @@ Once you select your target app, for example, Google Maps, the first thing you n
 
 To extract the APK from your phone, enable developer mode on your Android device by going to Settings > "About Phone" > "Software Information" and tapping on the "Build Number" 7 times. Then, go to Settings > "Developer Options", enable "USB Debugging" and connect it to your computer.
 
-Now, you should see your device listed when you run `adb devices` (assuming Android Studio is running).
+Now, you should see your device listed when you run `adb devices`.
 
 ```bash
 $ adb devices
@@ -75,7 +75,7 @@ Coming back to the "Anonymous" app, I looked at the exported activities and foun
     android:screenOrientation="portrait"/>
 ```
 
-Now, the first thing we want to see is the `onCreate()` function because when an activity is launched, the `onCreate()` method is called, which is where the activity's UI is created so it's like looking at the main function/entry point of the activity. Below is the code for the `onCreate()` method of the `EditImageActivity` class:
+Now, the first thing we want to see is the `onCreate()` function of the above activity because when an activity is launched, the `onCreate()` method is called, which is where the activity's UI is created so it's like looking at the main function/entry point of the activity. Below is the code for the `onCreate()` method of the `EditImageActivity` class:
 
 ```java
 public void onCreate(Bundle bundle) {
@@ -87,7 +87,7 @@ public void onCreate(Bundle bundle) {
 }
 ```
 
-The `getData()` method is where the app gets the data to be edited. I looked at the `getData()` method and found that it was getting the data from the intent(read up on Android Intents [here](https://developer.android.com/reference/android/content/Intent)) that started the activity i.e., we control the data that is passed to the activity. The code for the `getData()` method is as follows:
+The `getData()` method is where the app gets the data to be edited. I looked at the `getData()` method and found that it was getting data from the intent(read up on Android Intents [here](https://developer.android.com/reference/android/content/Intent)) that started the activity i.e., we control the data that is passed to the activity. The code for the `getData()` method is as follows:
 
 ```java
 private void getData() {
@@ -100,7 +100,7 @@ private void getData() {
 }
 ```
 
-The above code reveals that the source path for the image is controlled by the calling intent. We just need to put an `Extra` to our calling intent with the key as `source_path` (the parameter `ImageEditorIntentBuilder.SOURCE_PATH` is defined as `source_path` string). This should allow us(an external malicious app) to access internal images stored by the "Anonymous" app. The internal files used by an app are stored in `/data/data/<package-name>/files` and the "Anonymous" app stores an image of the user(image required for verification) in `/data/data/<anonymous-package-name>/files/CHALLENGE_IMAGE`.
+The above code reveals that the source path for the image is controlled by the calling intent. We just need to put an [`Extra`](https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20android.os.Bundle)) to our calling intent with the key as `source_path` (the parameter `ImageEditorIntentBuilder.SOURCE_PATH` is defined as `source_path` string). This should allow us(an external malicious app) to access internal images stored by the "Anonymous" app. The internal files used by an app are stored in `/data/data/<package-name>/files` and the "Anonymous" app stores an image of the user(image required for verification) in `/data/data/<anonymous-package-name>/files/CHALLENGE_IMAGE`.
 
 So, I wrote a simple app to test the exploit and it worked! I had access to the internal images of the app. Below is the exploit code:
 
@@ -191,7 +191,7 @@ We can patch this function dynamically with frida. First, we need to identify th
 package anonymous.app.name.networks.common;
 ```
 
-Knowing that and the name of the class containing the function `public final class Constants` in my case, we can simply override the implementation of `isVpnActive` to return `false` since it is `boolean` function. Setting it to return `false` means that our network proxy will not be detected by the app and we will be able to intercept traffic freely. The relevant script is below:
+Knowing that and the name of the class containing the function `public final class Constants` in my case, we can simply override the implementation of `isVpnActive` to return `false` since it is a `boolean` function. Setting it to return `false` means that our network proxy will not be detected by the app and we will be able to intercept traffic freely. The relevant script is below:
 
 ```javascript
 Java.perform(() => {

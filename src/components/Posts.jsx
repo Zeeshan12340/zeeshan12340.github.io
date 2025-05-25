@@ -9,8 +9,8 @@ export default function Posts() {
             <h1 className='header'>Blog Posts</h1>
             <div>
                 <div className='posts-container'>
-                    {posts.posts.map((post, index) => (
-                        <Link key={index} to={`/posts/${index + 1}`} style={{ textDecoration: 'none' }}>
+                    {[...posts.posts].reverse().map((post, index) => (
+                        <Link key={index} to={`/posts/${posts.posts.length - index}`} style={{ textDecoration: 'none' }}>
                             <div key={index} style={{ minWidth: 800, minHeight: 60, borderRadius: 10, background: '#35393b' }} className='glow-card p-1 m-2 rounded-lg'>
                                 <div
                                     style={{
