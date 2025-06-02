@@ -1,12 +1,12 @@
 # Stage 1
-FROM node:18.17.0 as builder
+FROM node:latest as builder
 WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build
 
 # Stage 2
-FROM nginx:1.24.0-alpine
+FROM nginx:1.27.5-alpine
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=builder /app/build .
