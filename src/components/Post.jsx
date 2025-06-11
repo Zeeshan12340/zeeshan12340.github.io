@@ -6,7 +6,10 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function Post() {
-    const { id } = useParams();
+    let { id } = useParams();
+    if ( id == "android-exploitation" ) {
+        id = 3;
+    }
 
     const [post, setPost] = useState('');
     const BlockQuote = ({ children }) => (
