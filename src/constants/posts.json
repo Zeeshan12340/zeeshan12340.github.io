@@ -11,6 +11,10 @@
         {
             "title": "Android Exploitation: How I found a bug in an app",
             "pubdate": "2025-05-23"
+        },
+        {
+            "title": "Re-Discovering libcue CVE-2023-43641",
+            "pubdate": "2026-02-07"
         }
     ]
 }

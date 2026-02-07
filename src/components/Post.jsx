@@ -42,7 +42,7 @@ export default function Post() {
 
     return (
         <div className="mt-5 pt-5" style={{ background: "linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60))" }}>
-            <div style={{ backgroundColor: 'rgb(19, 19, 28)', maxWidth: '1100px', margin: '0 auto', padding: 30, textAlign: 'justify', fontFamily: 'Inter, Sans-Serif' }}>
+            <div style={{ backgroundColor: 'rgb(19, 19, 28)', maxWidth: '1350px', margin: '0 auto', padding: 50, textAlign: 'justify', fontFamily: 'Inter, Sans-Serif' }}>
                 <ReactMarkdown
                     components={{
                         h1: ({ ...props }) => <h1 style={{ fontSize: '2em', fontWeight: 'bold', borderBottom: '2px solid #ccc', paddingBottom: '0.3em', marginTop: '1em', color: '#ffffff' }} {...props} />,
