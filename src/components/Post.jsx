@@ -4,6 +4,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import posts from '../constants/posts.json';
 
 export default function Post() {
     let { id } = useParams();
@@ -11,6 +12,7 @@ export default function Post() {
         id = 3;
     }
 
+    const meta = posts.posts[Number(id) - 1];
     const [post, setPost] = useState('');
     const BlockQuote = ({ children }) => (
         <blockquote style={{
@@ -40,9 +42,29 @@ export default function Post() {
             .catch(() => setPost('# 404 - Post Not Found\nSorry, the post you\'re looking for does not exist.'));
     }, [id]);
 
+    const body = meta ? post.replace(/^\s*#[^\n]*\n+/, '') : post;
+
     return (
         <div className="mt-5 pt-5" style={{ background: "var(--bg-gradient)" }}>
             <div style={{ backgroundColor: 'var(--card-bg)', maxWidth: '900px', width: '100%', boxSizing: 'border-box', margin: '0 auto', padding: 50, textAlign: 'left', fontFamily: 'var(--font-body)', fontSize: '1.125rem' }}>
+                {meta && (
+                    <header className="post-head">
+                        <h1 className="post-head__title">{meta.title}</h1>
+                        <div className="post-head__meta">
+                            <span className="post-head__date">{meta.pubdate}</span>
+                            {meta.tags && (
+                                <div className="tag-list">
+                                    {meta.tags.map((tag) => (
+                                        <span key={tag} className="tag">{tag}</span>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        {meta.description && (
+                            <p className="post-head__about">{meta.description}</p>
+                        )}
+                    </header>
+                )}
                 <ReactMarkdown
                     components={{
                         h1: ({ ...props }) => <h1 style={{ fontSize: '2em', fontWeight: 'bold', borderBottom: '2px solid var(--accent)', paddingBottom: '0.3em', marginTop: '1em', color: '#ffffff' }} {...props} />,
@@ -76,7 +98,7 @@ export default function Post() {
                         blockquote: BlockQuote,
                     }}
                 >
-                    {post}
+                    {body}
                 </ReactMarkdown>
             </div>
         </div>

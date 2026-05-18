@@ -15,12 +15,12 @@
   --font-body: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-a:not(.navbar__link):not(.btn):not(.accent-btn) {
+a:not(.navbar__link):not(.btn):not(.accent-btn):not(.post-row) {
   color: var(--accent);
   text-decoration: none;
 }
 
-a:not(.navbar__link):not(.btn):not(.accent-btn):hover {
+a:not(.navbar__link):not(.btn):not(.accent-btn):not(.post-row):hover {
   color: var(--accent-bright);
   text-decoration: underline;
 }
@@ -401,4 +401,114 @@ pre code {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* ---- Tags ---- */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-bright);
+  background: rgba(61, 132, 198, 0.12);
+  border: 1px solid rgba(61, 132, 198, 0.35);
+  padding: 3px 11px;
+  border-radius: 999px;
+}
+
+/* ---- Blog list bars ---- */
+.post-row {
+  display: block;
+  width: min(800px, 92vw);
+  box-sizing: border-box;
+  padding: 20px 26px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-row__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.post-row__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: var(--text);
+}
+
+.post-row:hover .post-row__title {
+  color: var(--accent-bright);
+}
+
+.post-row__date {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.post-row__desc {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.post-row .tag-list {
+  margin-top: 14px;
+}
+
+/* ---- Post page header ---- */
+.post-head {
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.post-head__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.post-head__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.post-head__date {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  color: var(--accent);
+}
+
+.post-head__about {
+  margin: 16px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  opacity: 0.75;
+  font-style: italic;
 }

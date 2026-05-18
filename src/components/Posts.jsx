@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import '../index.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import posts from '../constants/posts.json';
@@ -6,33 +6,30 @@ import posts from '../constants/posts.json';
 export default function Posts() {
     return (
         <div>
-            <h1 className='header'>Blog Posts</h1>
-            <div>
-                <div className='posts-container'>
-                    {[...posts.posts].reverse().map((post, index) => (
-                        <Link key={index} to={`/posts/${posts.posts.length - index}`} style={{ textDecoration: 'none' }}>
-                            <div key={index} style={{ width: 'min(800px, 92vw)', minHeight: 64, borderRadius: 10, background: 'var(--card-bg)' }} className='glow-card m-2'>
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        gap: 16,
-                                        fontSize: 19,
-                                        fontFamily: 'var(--font-body)',
-                                        color: 'var(--text)',
-                                        padding: '18px 28px',
-                                    }}
-                                >
-                                    <div style={{ fontWeight: 600 }}>{post.title}</div>
-                                    <div style={{ color: 'var(--accent)', fontSize: '0.92em', whiteSpace: 'nowrap' }}>{post.pubdate}</div>
-                                </div>
-
+            <h1 className="header">Blog Posts</h1>
+            <div className="posts-container">
+                {[...posts.posts].reverse().map((post, index) => {
+                    const id = posts.posts.length - index;
+                    return (
+                        <Link key={id} to={`/posts/${id}`} className="post-row glow-card">
+                            <div className="post-row__head">
+                                <span className="post-row__title">{post.title}</span>
+                                <span className="post-row__date">{post.pubdate}</span>
                             </div>
+                            {post.description && (
+                                <p className="post-row__desc">{post.description}</p>
+                            )}
+                            {post.tags && (
+                                <div className="tag-list">
+                                    {post.tags.map((tag) => (
+                                        <span key={tag} className="tag">{tag}</span>
+                                    ))}
+                                </div>
+                            )}
                         </Link>
-                    ))}
-                </div>
+                    );
+                })}
             </div>
         </div>
-    )
+    );
 }
