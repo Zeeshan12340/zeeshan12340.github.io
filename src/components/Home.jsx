@@ -5,9 +5,12 @@ import Social from './Social';
 const styles = {
   nameStyle: {
     font: 'normal 500 3em "Anonymous Pro", sans-serif',
+    color: 'var(--accent-bright)',
+    textShadow: '0 0 28px var(--accent-glow)',
   },
   infoStyle: {
     font: 'normal 300 1.4em "Sans Francisco"',
+    color: 'var(--text)',
   },
   inlineChild: {
     display: 'inline-block',

@@ -14,7 +14,7 @@ export default function Post() {
     const [post, setPost] = useState('');
     const BlockQuote = ({ children }) => (
         <blockquote style={{
-            borderLeft: '4px solid #888',
+            borderLeft: '4px solid var(--accent)',
             paddingLeft: '1em',
             color: '#bbb',
             fontStyle: 'italic',
@@ -41,12 +41,12 @@ export default function Post() {
     }, [id]);
 
     return (
-        <div className="mt-5 pt-5" style={{ background: "linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60))" }}>
-            <div style={{ backgroundColor: 'rgb(19, 19, 28)', maxWidth: '1350px', margin: '0 auto', padding: 50, textAlign: 'justify', fontFamily: 'Inter, Sans-Serif' }}>
+        <div className="mt-5 pt-5" style={{ background: "var(--bg-gradient)" }}>
+            <div style={{ backgroundColor: 'var(--card-bg)', maxWidth: '1350px', margin: '0 auto', padding: 50, textAlign: 'justify', fontFamily: 'Inter, Sans-Serif' }}>
                 <ReactMarkdown
                     components={{
-                        h1: ({ ...props }) => <h1 style={{ fontSize: '2em', fontWeight: 'bold', borderBottom: '2px solid #ccc', paddingBottom: '0.3em', marginTop: '1em', color: '#ffffff' }} {...props} />,
-                        h2: ({ ...props }) => <h2 style={{ fontSize: '1.5em', fontWeight: 'bold', borderBottom: '1px solid #555', paddingBottom: '0.2em', marginTop: '1em', color: '#dddddd' }} {...props} />,
+                        h1: ({ ...props }) => <h1 style={{ fontSize: '2em', fontWeight: 'bold', borderBottom: '2px solid var(--accent)', paddingBottom: '0.3em', marginTop: '1em', color: '#ffffff' }} {...props} />,
+                        h2: ({ ...props }) => <h2 style={{ fontSize: '1.5em', fontWeight: 'bold', borderBottom: '1px solid var(--card-border)', paddingBottom: '0.2em', marginTop: '1em', color: '#dddddd' }} {...props} />,
                         img: ({ ...props }) => <div><img {...props} /></div>,
                         code: ({ inline, className, children, ...props }) => {
                             const match = /language-(\w+)/.exec(className || '');

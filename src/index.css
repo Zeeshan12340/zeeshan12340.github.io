@@ -1,3 +1,28 @@
+:root {
+  --bg: #121212;
+  --text: #eee;
+  --accent: #3d84c6;
+  --accent-bright: #63a6e6;
+  --accent-glow: rgba(61, 132, 198, 0.40);
+  --bg-gradient: linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60));
+  --card-bg: #14141f;
+  --card-footer-bg: #101019;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --nav-link: #dedede;
+  --nav-link-hover: #fefefe;
+  --nav-link-active: #fefefe;
+}
+
+a:not(.navbar__link):not(.btn) {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:not(.navbar__link):not(.btn):hover {
+  color: var(--accent-bright);
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -82,17 +107,19 @@ code {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60));
+  background: var(--bg-gradient);
 }
 
 .glow-card {
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .glow-card:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 10px 34px var(--accent-glow);
+  transform: translateY(-2px);
 }
 
 .section-content-container {
@@ -171,13 +198,25 @@ section.timeline-card-content div.card-description > p {
   margin-top: 70px;
   margin-bottom: 25px;
   position: relative;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 16px auto 0;
+  background: var(--accent);
+  border-radius: 2px;
 }
 
 .projects-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background: linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60));
+  background: var(--bg-gradient);
 }
 
 .posts-container {

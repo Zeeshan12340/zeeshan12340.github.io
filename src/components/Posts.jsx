@@ -11,7 +11,7 @@ export default function Posts() {
                 <div className='posts-container'>
                     {[...posts.posts].reverse().map((post, index) => (
                         <Link key={index} to={`/posts/${posts.posts.length - index}`} style={{ textDecoration: 'none' }}>
-                            <div key={index} style={{ minWidth: 800, minHeight: 60, borderRadius: 10, background: '#35393b' }} className='glow-card p-1 m-2 rounded-lg'>
+                            <div key={index} style={{ minWidth: 800, minHeight: 60, borderRadius: 10, background: 'var(--card-bg)' }} className='glow-card p-1 m-2 rounded-lg'>
                                 <div
                                     style={{
                                         display: 'flex',

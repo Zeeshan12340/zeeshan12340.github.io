@@ -36,11 +36,10 @@ const ProjectCard = (props) => {
   return (
     <div>
       <Card
+        className="glow-card"
         style={{
           borderRadius: 10,
           backgroundColor: theme.cardBackground,
-          borderColor: theme.cardBorderColor,
-          borderWidth: 3,
           width: 350,
           marginLeft: 100,
           marginRight: 100,
