@@ -11,8 +11,8 @@
   --nav-link: #dedede;
   --nav-link-hover: #fefefe;
   --nav-link-active: #fefefe;
-  --font-display: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-body: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 a:not(.navbar__link):not(.btn):not(.accent-btn):not(.post-row) {
