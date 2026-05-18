@@ -1,7 +1,7 @@
 # Personal Website
 
 Personal website for showcasing projects, blogs, etc. Built using React and Tailwind CSS.
-The blogs page was inspired by [shunt's blog](https://terawhiz.github.io/blog/)
+The blogs page was inspired by [shunt's blog](https://blog.shunt.in/blog/)
 
 To build:
 

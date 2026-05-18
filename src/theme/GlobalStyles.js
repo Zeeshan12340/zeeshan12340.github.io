@@ -1,10 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-   body {
-     background: ${({ theme }) => theme.background};
-     color: ${({ theme }) => theme.color};
-     transition: all 0.50s linear; 
+  html {
+    background: #1e1e2d;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: ${({ theme }) => theme.color};
   }
 `;
 
