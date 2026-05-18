@@ -1,11 +1,6 @@
 {
     "sections": [
         {
-            "component": "About",
-            "path": "/about",
-            "headerTitle": "About"
-        },
-        {
             "component": "Posts",
             "path": "/blog",
             "headerTitle": "Blog"

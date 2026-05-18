@@ -11,22 +11,21 @@ export default function Posts() {
                 <div className='posts-container'>
                     {[...posts.posts].reverse().map((post, index) => (
                         <Link key={index} to={`/posts/${posts.posts.length - index}`} style={{ textDecoration: 'none' }}>
-                            <div key={index} style={{ minWidth: 800, minHeight: 60, borderRadius: 10, background: 'var(--card-bg)' }} className='glow-card p-1 m-2 rounded-lg'>
+                            <div key={index} style={{ width: 'min(800px, 92vw)', minHeight: 64, borderRadius: 10, background: 'var(--card-bg)' }} className='glow-card m-2'>
                                 <div
                                     style={{
                                         display: 'flex',
                                         justifyContent: 'space-between',
                                         alignItems: 'center',
-                                        fontSize: 20,
-                                        fontFamily: '-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif',
-                                        color: '#fff',
-                                        paddingLeft: 30,
-                                        paddingRight: 30,
-                                        paddingTop: 7,
+                                        gap: 16,
+                                        fontSize: 19,
+                                        fontFamily: 'var(--font-body)',
+                                        color: 'var(--text)',
+                                        padding: '18px 28px',
                                     }}
                                 >
-                                    <div>{post.title}</div>
-                                    <div>{post.pubdate}</div>
+                                    <div style={{ fontWeight: 600 }}>{post.title}</div>
+                                    <div style={{ color: 'var(--accent)', fontSize: '0.92em', whiteSpace: 'nowrap' }}>{post.pubdate}</div>
                                 </div>
 
                             </div>

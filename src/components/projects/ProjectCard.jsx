@@ -36,18 +36,23 @@ const ProjectCard = (props) => {
   return (
     <div>
       <Card
-        className="glow-card"
+        className="glow-card project-card"
         style={{
           borderRadius: 10,
           backgroundColor: theme.cardBackground,
-          width: 350,
-          marginLeft: 100,
-          marginRight: 100,
-          marginBottom: 50,
         }}
         text={theme.bsSecondaryVariant}
       >
-        <Card.Img variant="top" src={project?.image} style={{ height: 200 }} />
+        <Card.Img
+          variant="top"
+          src={project?.image}
+          style={{
+            height: 190,
+            width: '100%',
+            objectFit: 'cover',
+            backgroundColor: '#0c0c14',
+          }}
+        />
         <Card.Body>
           <Card.Title style={styles.cardTitleStyle}>{project.title}</Card.Title>
           <Card.Text style={styles.cardTextStyle} as="div">
@@ -59,6 +64,7 @@ const ProjectCard = (props) => {
           {project?.links?.map((link) => (
             <Button
               key={link.href}
+              className="accent-btn"
               style={styles.buttonStyle}
               variant={"outline-" + theme.bsSecondaryVariant}
               onClick={() => window.open(link.href, "_blank")}

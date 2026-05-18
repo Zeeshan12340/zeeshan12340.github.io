@@ -1,39 +1,31 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import Social from './Social';
-
-const styles = {
-  nameStyle: {
-    font: 'normal 500 3em "Anonymous Pro", sans-serif',
-    color: 'var(--accent-bright)',
-    textShadow: '0 0 28px var(--accent-glow)',
-  },
-  infoStyle: {
-    font: 'normal 300 1.4em "Sans Francisco"',
-    color: 'var(--text)',
-  },
-  inlineChild: {
-    display: 'inline-block',
-  },
-  mainContainer: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-};
+import about from '../constants/about.json';
 
 function Home() {
   return (
-    <div style={styles.mainContainer}>
-      <Fade>
-        <h1 style={styles.nameStyle}>Zeeshan1234</h1>
-        <br />
-        <h2 style={styles.infoStyle}>Motivated Cyber Security Professional focused on low level research and finding bugs.</h2>
-        <br />
-        <Social />
-      </Fade>
+    <div className="home">
+      <section className="hero">
+        <Fade triggerOnce>
+          <img className="hero__avatar" src={about.imageSource} alt="Zeeshan" />
+          <h1 className="hero__name">Zeeshan1234</h1>
+          <div className="hero__about">
+            <ReactMarkdown>{about.about}</ReactMarkdown>
+          </div>
+          <div className="hero__cta">
+            <Link className="accent-btn accent-btn--solid" to="/projects">
+              View Projects
+            </Link>
+            <Link className="accent-btn" to="/blog">
+              Read the Blog
+            </Link>
+          </div>
+          <Social />
+        </Fade>
+      </section>
     </div>
   );
 }

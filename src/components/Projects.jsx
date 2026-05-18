@@ -42,6 +42,7 @@ const Projects = (props) => {
           <div>
             {!showMore && (
               <Button
+                className="accent-btn"
                 style={styles.showMoreStyle}
                 variant={theme.bsSecondaryVariant}
                 onClick={() => setShowMore(true)}
