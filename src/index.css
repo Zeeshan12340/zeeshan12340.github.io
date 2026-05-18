@@ -363,10 +363,62 @@ pre code {
   max-width: 88vw;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.project-card .card-img-top {
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .card-img-top {
+  transform: scale(1.045);
 }
 
 .project-card .card-body {
   flex: 1 1 auto;
+  padding: 20px 22px;
+}
+
+.project-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: var(--text);
+  margin-bottom: 0.7rem;
+  transition: color 0.2s ease;
+}
+
+.project-card:hover .project-card__title {
+  color: var(--accent-bright);
+}
+
+.project-card .card-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-card .card-body li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.project-card .card-body li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.project-card .card-footer {
+  padding: 16px 22px;
 }
 
 .project-card__actions {

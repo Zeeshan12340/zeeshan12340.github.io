@@ -5,12 +5,6 @@ import { ThemeContext } from "styled-components";
 import ReactMarkdown from "react-markdown";
 
 const styles = {
-  cardTitleStyle: {
-    fontFamily: "var(--font-display)",
-    fontSize: 21,
-    fontWeight: 700,
-    color: "var(--text)",
-  },
   cardTextStyle: {
     textAlign: "left",
   },
@@ -40,7 +34,7 @@ const ProjectCard = (props) => {
         }}
       />
       <Card.Body>
-        <Card.Title style={styles.cardTitleStyle}>{project.title}</Card.Title>
+        <Card.Title className="project-card__title">{project.title}</Card.Title>
         <Card.Text style={styles.cardTextStyle} as="div">
           <ReactMarkdown>{project.bodyText}</ReactMarkdown>
         </Card.Text>
