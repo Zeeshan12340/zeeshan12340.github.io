@@ -220,6 +220,8 @@ section.timeline-card-content div.card-description > p {
   align-items: stretch;
   flex-wrap: wrap;
   gap: 28px;
+  max-width: 1140px;
+  margin: 0 auto;
   padding: 32px 16px 8px;
 }
 
