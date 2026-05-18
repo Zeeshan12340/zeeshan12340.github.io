@@ -42,7 +42,7 @@ export default function Post() {
 
     return (
         <div className="mt-5 pt-5" style={{ background: "var(--bg-gradient)" }}>
-            <div style={{ backgroundColor: 'var(--card-bg)', maxWidth: '1350px', margin: '0 auto', padding: 50, textAlign: 'justify', fontFamily: 'var(--font-body)' }}>
+            <div style={{ backgroundColor: 'var(--card-bg)', maxWidth: '1350px', margin: '0 auto', padding: 50, textAlign: 'left', fontFamily: 'var(--font-body)' }}>
                 <ReactMarkdown
                     components={{
                         h1: ({ ...props }) => <h1 style={{ fontSize: '2em', fontWeight: 'bold', borderBottom: '2px solid var(--accent)', paddingBottom: '0.3em', marginTop: '1em', color: '#ffffff' }} {...props} />,

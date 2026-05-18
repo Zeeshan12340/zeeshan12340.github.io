@@ -59,9 +59,11 @@ function Social() {
       {customSites.map((site) => (
         <a
           key={site.network}
+          className="social-icon"
           href={site.href}
           target="_blank"
           rel="noreferrer"
+          aria-label={site.network}
         >
           <img
             src={site.iconUrl}
