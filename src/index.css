@@ -1,12 +1,12 @@
 :root {
-  --bg: #121212;
-  --text: #eee;
-  --accent: #3d84c6;
-  --accent-bright: #63a6e6;
-  --accent-glow: rgba(61, 132, 198, 0.40);
-  --bg-gradient: linear-gradient(135deg, rgb(30, 30, 45), rgb(32, 32, 60));
-  --card-bg: #14141f;
-  --card-footer-bg: #101019;
+  --bg: #0a0c0a;
+  --text: #e6e6e6;
+  --accent: #2ee66b;
+  --accent-bright: #5cff9a;
+  --accent-glow: rgba(46, 230, 107, 0.35);
+  --bg-gradient: linear-gradient(135deg, #0b0f0b, #0e140e);
+  --card-bg: #0f140f;
+  --card-footer-bg: #0c110c;
   --card-border: rgba(255, 255, 255, 0.08);
   --nav-link: #dedede;
   --nav-link-hover: #fefefe;
@@ -49,7 +49,7 @@ code {
 
 .navbar-custom {
   font-size: large;
-  background: rgba(16, 16, 24, 0.72);
+  background: rgba(8, 10, 8, 0.72);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--card-border);
@@ -417,8 +417,8 @@ pre code {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--accent-bright);
-  background: rgba(61, 132, 198, 0.12);
-  border: 1px solid rgba(61, 132, 198, 0.35);
+  background: rgba(46, 230, 107, 0.12);
+  border: 1px solid rgba(46, 230, 107, 0.32);
   padding: 3px 11px;
   border-radius: 999px;
 }
