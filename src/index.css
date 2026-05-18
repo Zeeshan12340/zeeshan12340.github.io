@@ -358,9 +358,14 @@ pre code {
 }
 
 /* ---- Responsive project cards ---- */
-.project-card {
+.project-fade {
+  display: flex;
   width: 340px;
   max-width: 88vw;
+}
+
+.project-card {
+  width: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;

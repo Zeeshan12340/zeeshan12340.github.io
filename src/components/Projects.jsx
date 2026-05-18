@@ -20,7 +20,7 @@ const Projects = (props) => {
       {data ? (
         <div className="projects-container">
           {data.projects?.map((project) => (
-            <Fade key={project.title}>
+            <Fade key={project.title} className="project-fade">
               <ProjectCard project={project} />
             </Fade>
           ))}
