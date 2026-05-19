@@ -24,6 +24,8 @@ function Social() {
         marginBottom: 10,
         width: '50px',
         borderRadius: '50%',
+        backgroundColor: 'white',
+        padding: '4px',
       },
     },
 
@@ -50,6 +52,8 @@ function Social() {
         width: '50px',
         maxHeight: '50px',
         borderRadius: '50%',
+        backgroundColor: 'white',
+        padding: '4px',
       },
     }
   ];
