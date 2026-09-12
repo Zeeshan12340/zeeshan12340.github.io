@@ -5,6 +5,7 @@
 A while back I wrote about a [stored XSS I found in pwn.college's public dojo feature](/posts/2). If you haven't read that one, the short version is: <https://pwn.college/> is a platform for learning binary exploitation (and much more) built by Yan Shoshitaishvili, Connor Nelson and [a bunch of great people](https://pwn.college/sensei), I've spent a lot of time on it, and I occasionally like to poke at the site itself instead of the challenges.
 
 Ah ****, here we go again. Same platform, different bug, and this time it was a broken access control issue rather than anything flashy.
+[Public GitHub security advisory for the issue](https://github.com/pwncollege/dojo/security/advisories/GHSA-p423-qc2f-9j7g) 
 
 ## Motivation
 

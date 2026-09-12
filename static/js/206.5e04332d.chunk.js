@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkportfolio_app||=[]).push([[206],{4206(a,p,s){a.exports=s.p+"static/media/post5.b3cb23a9af3eaa9b8d0f.md"}}]);
