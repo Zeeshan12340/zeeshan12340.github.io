@@ -23,6 +23,12 @@
             "pubdate": "2026-02-07",
             "description": "An n-day analysis of libcue CVE-2023-43641 — fuzzing, root cause, and one-click RCE.",
             "tags": ["Binary Exploitation", "Fuzzing", "CVE"]
+        },
+        {
+            "title": "Pwning pwn.college (again)",
+            "pubdate": "2026-07-28",
+            "description": "Reading pwn.college's open source to find a broken access control bug.",
+            "tags": ["Web", "Broken Access Control", "Bug Hunting"]
         }
     ]
 }
